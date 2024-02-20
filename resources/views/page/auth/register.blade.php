@@ -29,7 +29,7 @@
                     <form action="/register/store" method="post" role="form">
                         @csrf
                         <img src="{{ asset('/assets/img/') }}" alt="main_logo">
-                        <h1>Login</h1>
+                        <h1>Register</h1>
                         <span>Enter Your Data</span>
                         <input class="form-control @error('nama') is-invalid @enderror" type="text" name="nama"
                             placeholder="Nama">
