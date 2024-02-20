@@ -1,13 +1,13 @@
 @extends('layouts.master')
-@section('tittle','mesin')
+@section('title','Machine')
 @section('content')
 <div class="content-wrapper">
     <div class="row">
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <h4>
+                    Add Machine Data
                   <a href="/mesin" class="btn btn-primary">Kembali <i class="mdi mdi-arrow-left-bold"></i></a>
-                  Tambah Data Mesin
                 </h4>
                 <div class="card-body">
                     <form action="/machine/store" method="post">

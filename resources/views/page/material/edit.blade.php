@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('tittle','judul')
+@section('title','Material')
 @section('content')
 <div class="content-wrapper">
     <div class="row">
@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-body">
                  <h4 class="card-tittle">
-                    Tambah Data Material <a href="/bahan" class="btn btn-primary">back</a>
+                    Edit Material Data <a href="/bahan" class="btn btn-primary">back</a>
                  </h4>
                     <form action="/material/{{$bahan->id}}/update" method="post">
                         @csrf

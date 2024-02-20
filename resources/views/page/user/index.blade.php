@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('tittle','user')
+@section('title','user')
 @section('content')
 <div class="content-wrapper">
     <div class="row">
@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">
-                        User Table
+                        User Page
                     </h4>
                     @can('admin')
                     <a class="btn btn-primary float-left" href="/user/create">Tambah Data User <i class="mdi mdi-account-plus"></i></a>

@@ -1,11 +1,11 @@
 @extends('layouts.master')
-@section('tittle','user')
+@section('title','Machine')
 @section('content')
 <div class="content-wrapper">
     <div class="row">
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
-                <h4>Tambah Data User
+                <h4>Edit Machine Data
                     <a href="/machine" class="btn btn-primary">Kembali <i class="mdi mdi-arrow-left-bold"></i></a>
                 </h4>
                 <div class="card-body">

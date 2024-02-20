@@ -1,5 +1,5 @@
 @extends('layout.master')
-@section('tittle','mesin')
+@section('title','mesin')
 @section('konten')
 <div class="content-wrapper">
     <div class="row">
@@ -7,7 +7,7 @@
             <div class="card">
                 <h4>
                   <a href="/mesin" class="btn btn-primary">Kembali <i class="mdi mdi-arrow-left-bold"></i></a>
-                  Tambah Data Mesin
+                  Add Machine Data
                 </h4>
                 <div class="card-body">
                     <form action="/mesin/store" method="post">

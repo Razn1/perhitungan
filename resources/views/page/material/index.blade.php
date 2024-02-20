@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('tittle','material')
+@section('title','Material')
 @section('content')
 <div class="content-wrapper">
     <div class="row">
@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-body">
                  <h4 class="card-tittle">
-                    Material Table
+                    Material Page
                  </h4>
                  @can('admin')
                  <a class="btn btn-primary" href="/material/create">tambah data +</a>

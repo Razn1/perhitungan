@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('tittle','mesin')
+@section('title','Machine')
 @section('content')
 <div class="content-wrapper">
     <div class="row">
@@ -124,7 +124,7 @@
                                     @if ($bunga < 0)
                                         -
                                     @else
-                                        {{$bunga}}                                        
+                                        {{$bunga}}
                                     @endif
                                 </td>
                             </tr>

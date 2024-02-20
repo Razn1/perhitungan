@@ -1,5 +1,5 @@
 @extends('layout.master')
-@section('tittle','judul')
+@section('title','detail')
 @section('konten')
 <div class="content-wrapper">
     <div class="row">
@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-body">
                  <h4 class="card-tittle">
-                    Detail Produksi
+                    Detail Produksi 
                     <a href="/detail_produksi/pilih_model" class="btn btn-primary">Add New Data <i class="mdi mdi-plus"></i></a>
                  </h4>
                  <div class="table-responsive">

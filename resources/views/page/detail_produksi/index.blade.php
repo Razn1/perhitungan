@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('tittle','judul')
+@section('title','Detail')
 @section('content')
 <div class="content-wrapper">
     <div class="row">
@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-body">
                  <h4 class="card-tittle">
-                    Judul Halaman <a href="/detail/request" class="btn btn-primary">Add New Data <i class="mdi mdi-plus"></i></a>
+                    Detail Production <a href="/detail/request" class="btn btn-primary">Add New Data <i class="mdi mdi-plus"></i></a>
                  </h4>
                  <div class="table-responsive">
                     <table id="example" class="table table-hover">

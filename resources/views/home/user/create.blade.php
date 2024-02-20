@@ -1,12 +1,12 @@
 @extends('layout.master')
-@section('tittle','user')
+@section('title','user')
 @section('konten')
 <div class="content-wrapper">
     <div class="row">
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="page-header">
-                    <h3 class="page-title"> Form elements </h3>
+                    <h3 class="page-title"> Add User Data </h3>
                   </div>
                 <div class="card-body">
                     <form action="/user/tambah" method="post" enctype="multipart/form-data">

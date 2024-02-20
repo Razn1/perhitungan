@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-body">
                  <h4 class="card-tittle">
-                    Request A Product <a href="/order" class="btn btn-primary">back</a>
+                    Edit Product Data <a href="/order" class="btn btn-primary">back</a>
                  </h4>
                  <form action="/detail_produksi/{{ $detail->id }}/store" method="post" enctype="multipart/form-data">
                     @csrf

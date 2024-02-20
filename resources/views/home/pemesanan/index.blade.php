@@ -1,5 +1,5 @@
 @extends('layout.master')
-@section('tittle','judul')
+@section('title','Pemesanan')
 @section('konten')
 <div class="content-wrapper">
     <div class="row">
@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-body">
                  <h4 class="card-tittle">
-                    Judul Halaman <a href="/pemesanan/request" class="btn btn-primary">Add New Data <i class="mdi mdi-plus"></i></a>
+                    Pemesanan <a href="/pemesanan/request" class="btn btn-primary">Add New Data <i class="mdi mdi-plus"></i></a>
                  </h4>
                  <div class="table-responsive">
                     <table id="example" class="table table-hover">
