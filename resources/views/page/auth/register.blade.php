@@ -24,8 +24,8 @@
     @endif
     <div class="container" id="container">
         <div class="form-container sign-in">
-            <div class="scrollbar" id="style-1">
-                <div class="force-overflow">
+            {{-- <div class="scrollbar" id="style-1">
+                <div class="force-overflow"> --}}
                     <form action="/register/store" method="post" role="form">
                         @csrf
                         {{-- <img src="{{ asset('/assets/img/') }}" alt="main_logo"> --}}
@@ -69,8 +69,8 @@
                         <button class="btn mt-3" type="submit">Register</button>
                         <a href="/" class="hidden" id="login">Back</a>
                     </form>
-                </div>
-            </div>
+                {{-- </div>
+            </div> --}}
         </div>
         <div class="toggle-container">
             <div class="toggle">
