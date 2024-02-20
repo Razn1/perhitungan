@@ -21,6 +21,7 @@
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="/login">Sign In</a></li>
                 <li><a href="/register">Sign Up</a></li>
+
             </ul>
         </div>
     </section>
@@ -29,7 +30,7 @@
         <h4>Penawaran Tukar Tambah</h4>
         <h2>Penawaran Tinggi</h2>
         <h1>Di Semua Produk</h1>
-        <p>Lebih Hemat Dengan Potongan Dan Diskon Hingga 80% !!</p>
+        <p></p>
         {{-- <button>Belanja Sekarang</button> --}}
     </section>
 

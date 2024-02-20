@@ -126,7 +126,7 @@ button.white {
 
 /* Home Page */
 #hero {
-    background-image: url("img/hero4.png");
+    background-image: url("../images/hero4.png");
     height: 90vh;
     width: 100%;
     background-size: cover;
@@ -443,13 +443,14 @@ button.white {
 footer{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    padding-left: 20px;
 }
 
 footer .col {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    padding-left: 20px;
     margin-bottom: 20px;
 }
 
@@ -514,6 +515,82 @@ footer .copyright {
     text-align: center;
 }
 
+#team {
+    overflow: hidden;
+    background-color: #f3f4f6; /* Ubah sesuai kebutuhan Anda */
+    padding-bottom: 12px;
+    padding-top: 20px;
+  }
+  
+  #team.dark-bg {
+    background-color: #333; /* Ubah sesuai kebutuhan Anda */
+  }
+  
+  #team .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #team .text-primary {
+    color: #3056d3; /* Ubah sesuai kebutuhan Anda */
+  }
+  
+  #team h2 {
+    margin-bottom: 3px;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #333; /* Ubah sesuai kebutuhan Anda */
+  }
+  
+  #team p {
+    font-size: 16px;
+    color: #666; /* Ubah sesuai kebutuhan Anda */
+  }
+  
+  #team .team-member {
+    margin-bottom: 20px;
+  }
+  
+  #team .team-member .group {
+    margin-bottom: 8px;
+    border-radius: 12px;
+    background-color: #fff; /* Ubah sesuai kebutuhan Anda */
+    padding: 20px 25px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Ubah sesuai kebutuhan Anda */
+  }
+  
+  #team .team-member .group.dark-bg {
+    background-color: #222; /* Ubah sesuai kebutuhan Anda */
+    box-shadow: none;
+  }
+  
+  #team .team-member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+  }
+  
+  #team .team-member h4 {
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333; /* Ubah sesuai kebutuhan Anda */
+  }
+  
+  #team .team-member p {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #666; /* Ubah sesuai kebutuhan Anda */
+  }
+  
+  #team .team-member .social-links a {
+    color: #666; /* Ubah sesuai kebutuhan Anda */
+  }
+  
+  #team .team-member .social-links a:hover {
+    color: #3056d3; /* Ubah sesuai kebutuhan Anda */
+  }
 /* Start Media query */
 
 
