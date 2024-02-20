@@ -14,7 +14,7 @@ class DashboardController extends Controller
 {
     public function lanjut()
     {
-        if (Auth::User()->level =! 'admin') {
+        if (Auth::User()->level !== 'admin') {
             return redirect('/dashboard');
         } else {
             return redirect('/admin/dashboard');
@@ -48,7 +48,15 @@ class DashboardController extends Controller
 
     public function admin()
     {
-        $statuses = ['dalam antrian', 'dalam proses', 'ditahan', 'berhenti', 'selesai'];
+        $selesai = DetailProduksi::where('status','=','selesai')->get()
+                        ->count();
+        $ditahan = DetailProduksi::where('status','=','ditahan')->get()
+                        ->count();
+        $berhenti = DetailProduksi::where('status','=','berhenti')->get()
+                        ->count();
+        $dalam_proses = DetailProduksi::where('status','=','dalam proses')->get()
+                        ->count();
+        $statuses = [ 'dalam proses', 'ditahan', 'berhenti', 'selesai'];
         $data = [];
 
         foreach ($statuses as $status) {
@@ -58,6 +66,6 @@ class DashboardController extends Controller
         $pilih_jenis=JenisBahan::all();
         // dd($data);
         // dd($statuses);
-        return view('home.dashboard',compact('pilih_jenis','data','statuses'));
+        return view('home.dashboard',compact('pilih_jenis','data','statuses','dalam_proses','ditahan','selesai','berhenti'));
     }
 }

@@ -1,5 +1,5 @@
-@extends('layout.master')
-@section('title','dashboard')
+    @extends('layout.master')
+@section('tittle','dashboard')
 @section('konten')
 <div class="container-fluid page-body-wrapper">
     <div class="main-panel">
@@ -11,17 +11,17 @@
                     <div class="row">
                       <div class="col-9">
                         <div class="d-flex align-items-center align-self-start">
-                          <h3 class="mb-0">$12.34</h3>
-                          <p class="text-success ms-2 mb-0 font-weight-medium">+3.5%</p>
+                          <h3 class="mb-0">{{ $dalam_proses }}</h3>
+                          <p class="text-success ms-2 mb-0 font-weight-medium"></p>
                         </div>
                       </div>
                       <div class="col-3">
-                        <div class="icon icon-box-success ">
-                          <span class="mdi mdi-arrow-top-right icon-item"></span>
+                        <div class="icon icon-box-primary ">
+                          <span class="mdi mdi-airplane-takeoff icon-item"></span>
                         </div>
                       </div>
                     </div>
-                    <h6 class="text-muted font-weight-normal">Potential growth</h6>
+                    <h6 class="text-muted font-weight-normal">Model Dalam Proses</h6>
                   </div>
                 </div>
                 </div>
@@ -31,37 +31,17 @@
                     <div class="row">
                       <div class="col-9">
                         <div class="d-flex align-items-center align-self-start">
-                          <h3 class="mb-0">$17.34</h3>
-                          <p class="text-success ms-2 mb-0 font-weight-medium">+11%</p>
-                        </div>
-                      </div>
-                      <div class="col-3">
-                        <div class="icon icon-box-success">
-                          <span class="mdi mdi-arrow-top-right icon-item"></span>
-                        </div>
-                      </div>
-                    </div>
-                    <h6 class="text-muted font-weight-normal">Revenue current</h6>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-9">
-                        <div class="d-flex align-items-center align-self-start">
-                          <h3 class="mb-0">$12.34</h3>
-                          <p class="text-danger ms-2 mb-0 font-weight-medium">-2.4%</p>
+                          <h3 class="mb-0">{{ $berhenti }}</h3>
+                          <p class="text-success ms-2 mb-0 font-weight-medium"></p>
                         </div>
                       </div>
                       <div class="col-3">
                         <div class="icon icon-box-danger">
-                          <span class="mdi mdi-arrow-bottom-left icon-item"></span>
+                          <span class="mdi mdi-stop-circle-outline icon-item"></span>
                         </div>
                       </div>
                     </div>
-                    <h6 class="text-muted font-weight-normal">Daily Income</h6>
+                    <h6 class="text-muted font-weight-normal">Model Berhenti Produksi </h6>
                   </div>
                 </div>
               </div>
@@ -71,17 +51,37 @@
                     <div class="row">
                       <div class="col-9">
                         <div class="d-flex align-items-center align-self-start">
-                          <h3 class="mb-0">$31.53</h3>
-                          <p class="text-success ms-2 mb-0 font-weight-medium">+3.5%</p>
+                          <h3 class="mb-0">{{ $ditahan }}</h3>
+                          <p class="text-danger ms-2 mb-0 font-weight-medium"></p>
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <div class="icon icon-box-warning">
+                          <span class="mdi mdi-pause-circle-outline icon-item"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <h6 class="text-muted font-weight-normal">Model Produksi Ditahan</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-9">
+                        <div class="d-flex align-items-center align-self-start">
+                          <h3 class="mb-0">{{ $selesai }}</h3>
+                          <p class="text-success ms-2 mb-0 font-weight-medium"></p>
                         </div>
                       </div>
                       <div class="col-3">
                         <div class="icon icon-box-success ">
-                          <span class="mdi mdi-arrow-top-right icon-item"></span>
+                          <span class="mdi mdi-checkbox-marked-circle icon-item"></span>
                         </div>
                       </div>
                     </div>
-                    <h6 class="text-muted font-weight-normal">Expense current</h6>
+                    <h6 class="text-muted font-weight-normal">Model Selesai</h6>
                   </div>
                 </div>
               </div>
@@ -173,20 +173,20 @@
                 label: 'Produksi Status',
                 data: {!! json_encode($data) !!},
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
                     'rgba(255, 206, 86, 0.2)',
                     'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)'
+                    'rgb(65, 200, 25)'
                 ],
                 borderColor: [
-                    'rgba(255, 99, 132, 1)',
                     'rgba(54, 162, 235, 1)',
+                    'rgba(255, 99, 132, 1)',
                     'rgba(255, 206, 86, 1)',
                     'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)'
+                    'rgb(65, 200, 25)'
                 ],
-                borderWidth: 2
+                borderWidth: 3
             }]
         },
         options: {

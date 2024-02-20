@@ -1,5 +1,5 @@
 @extends('layout.master')
-@section('title','detail')
+@section('tittle','detail')
 @section('konten')
 <div class="content-wrapper">
     <div class="row">
@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-body">
                  <h4 class="card-tittle">
-                    Edit Detail Production <a href="/order" class="btn btn-primary">back</a>
+                    Request A Product <a href="/order" class="btn btn-primary">back</a>
                  </h4>
                  <form action="/detail_produksi/{{ $detail->id }}/store" method="post" enctype="multipart/form-data">
                     @csrf

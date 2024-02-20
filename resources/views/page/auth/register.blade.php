@@ -24,12 +24,12 @@
     @endif
     <div class="container" id="container">
         <div class="form-container sign-in">
-            {{-- <div class="scrollbar" id="style-1">
-                <div class="force-overflow"> --}}
+            <div class="scrollbar" id="style-1">
+                <div class="force-overflow">
                     <form action="/register/store" method="post" role="form">
                         @csrf
-                        {{-- <img src="{{ asset('/assets/img/') }}" alt="main_logo"> --}}
-                        <h1>Register</h1>
+                        <img src="{{ asset('/assets/img/') }}" alt="main_logo">
+                        <h1>Login</h1>
                         <span>Enter Your Data</span>
                         <input class="form-control @error('nama') is-invalid @enderror" type="text" name="nama"
                             placeholder="Nama">
@@ -69,14 +69,14 @@
                         <button class="btn mt-3" type="submit">Register</button>
                         <a href="/" class="hidden" id="login">Back</a>
                     </form>
-                {{-- </div>
-            </div> --}}
+                </div>
+            </div>
         </div>
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel toggle-right">
-                    <h1>Hello, User!</h1>
-                    <p>Register with your personal details to use all of site features</p>
+                    <h1>Hello, Siswa!</h1>
+                    <p>Login with your personal details to use all of site features</p>
                 </div>
             </div>
         </div>

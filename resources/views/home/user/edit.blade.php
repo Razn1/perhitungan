@@ -1,5 +1,5 @@
 @extends('layout.master')
-@section('title','User')
+@section('tittle','User')
 @section('konten')
 <div class="content-wrapper">
     <div class="row">
@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-body">
                  <h4 class="card-tittle">
-                    Edit User Data <a href="/user/admin" class="btn btn-primary">back</a>
+                    Tambah Data Material <a href="/user/all" class="btn btn-primary">back</a>
                  </h4>
                  <form action="/user/{{$user->id}}/edit" method="post" enctype="multipart/form-data">
                     @csrf

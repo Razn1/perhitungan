@@ -1,5 +1,5 @@
 @extends('layout.master')
-@section('title','Produksi')
+@section('tittle','Produksi')
 @section('konten')
 <div class="content-wrapper">
     <div class="row">
@@ -31,7 +31,10 @@
                                 <td>{{$u->id}}</td>
                                 <td>{{$u->keterangan}}</td>
                                 <td>
-                                    <a href="/produksi/{{$u->id}}/edit" class="btn btn-warning">Edit</a>
+                                    <button type="button" class="btn btn-info" onclick="showUpdateModal({{ $u->id }})">
+                                        Update Data
+                                    </button>
+                                    <a href="/produksi/{{$u->id}}/detail" class="btn btn-primary">Detail</a>
                                     <button class="btn btn-danger" onclick="Delete('/produksi/{{$u->id}}/hapus')">Hapus</button>
                                 </td>
                             </tr>
@@ -44,4 +47,47 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Update Data</h5>
+                <button type="button" class="btn btn-primary btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post" id="updateForm">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="" class="form-label text-light">Keterangan</label>
+                        <input type="text" class="form-control text-light" name="keterangan" id="tipe" aria-describedby="helpId" placeholder="KETERANGAN">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" onclick="submitUpdateForm()">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function showUpdateModal(id) {
+        // Mengatur nilai input pada modal sesuai dengan data yang ingin diperbarui
+        var tipe = document.getElementById('tipe');
+        tipe.value = $('#produksi' + id).text();
+
+        // Mengatur action form pada modal sesuai dengan ID yang dipilih
+        var form = document.getElementById('updateForm');
+        form.action = "/produksi/" + id + "/update";
+
+        // Menampilkan modal
+        $('#updateModal').modal('show');
+    }
+
+    function submitUpdateForm() {
+        // Mengirimkan form untuk disubmit
+        var form = document.getElementById('updateForm');
+        form.submit();
+    }
+</script>
 @endsection

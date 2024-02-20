@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'mesin')
+@section('tittle', 'mesin')
 @section('content')
     <div class="content-wrapper">
         <div class="row">
@@ -7,7 +7,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">
-                            Machine Page
+                            Machine Table
                         </h4>
                         @can('admin')
                         <a class="btn btn-primary float-left" href="/machine/create">Tambah Data mesin <i class="mdi mdi-account-plus"></i></a>

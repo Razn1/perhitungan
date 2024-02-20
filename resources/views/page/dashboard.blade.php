@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title','dashboard')
+@section('tittle','dashboard')
 @section('content')
 		<div class="container-fluid page-body-wrapper">
 			<div class="main-panel">

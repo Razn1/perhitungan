@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use App\Models\JenisBahan;
+use Illuminate\Support\Facades\Validator;
 
 class AdminUserController extends Controller
 {
@@ -13,6 +15,13 @@ class AdminUserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function index()
+    {
+        $pilih_jenis = JenisBahan::all();
+        // $admin = 'Admin';
+        $user = User::all();
+        return view('home.user.index',compact('user','pilih_jenis'));
+    }
     public function admin()
     {
         $pilih_jenis = JenisBahan::all();
@@ -80,7 +89,7 @@ class AdminUserController extends Controller
             'foto' => $foto
         ]);
 
-        return redirect('/user/admin')->with($validated);
+        return redirect('/user/all')->with($validated);
     }
 
     /**
@@ -155,7 +164,7 @@ class AdminUserController extends Controller
             ]);
         }
 
-        return redirect('/user/admin')->with($validated);
+        return redirect('/user/all')->with($validated);
     }
 
     /**
@@ -169,5 +178,53 @@ class AdminUserController extends Controller
         $user = User::find($id);
         $user->delete();
         return redirect()->back();
+    }
+
+    private function hapusGambarLama($namaGambar)
+    {
+        // Hapus gambar lama dari direktori
+        $path = public_path('image/user/' . $namaGambar);
+        if (file_exists($path)) {
+            unlink($path);
+        }
+    }
+
+    public function profile($id)
+    {
+        $pilih_jenis = JenisBahan::all();
+        $user = User::find($id);
+        return view('home.user.setting',compact('pilih_jenis','user'));
+    }
+
+    public function password($id)
+    {
+        $pilih_jenis = JenisBahan::all();
+        return view('home.user.password',compact('pilih_jenis'));
+    }
+
+    public function changePassword(Request $request, $id)
+    {
+        $validator = Validator::make($request->all(), [
+            'old_password' => 'required',
+            'new_password' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        // Cari user berdasarkan ID
+        $user = User::findOrFail($id);
+
+        // Periksa apakah password lama cocok
+        if (!Hash::check($request->old_password, $user->password)) {
+            return redirect()->back()->with('error', 'Old password is incorrect');
+        }
+
+        // Update password baru
+        $user->password = Hash::make($request->new_password);
+        $user->save();
+
+        return redirect('/admin/dashboard')->with('success', 'Password has been changed successfully');
     }
 }

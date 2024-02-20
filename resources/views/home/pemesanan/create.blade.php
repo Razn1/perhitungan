@@ -1,5 +1,5 @@
 @extends('layout.master')
-@section('title','pemesanan')
+@section('tittle','pemesanan')
 @section('konten')
 <div class="content-wrapper">
     <div class="row">

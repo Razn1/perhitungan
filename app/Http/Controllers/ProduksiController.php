@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\JenisBahan;
 use App\Models\Produksi;
+use App\Models\DetailProduksi;
 
 class ProduksiController extends Controller
 {
@@ -52,7 +53,10 @@ class ProduksiController extends Controller
      */
     public function show($id)
     {
-        //
+        $pilih_jenis = JenisBahan::all();
+        $detail = DetailProduksi::where('id_produksi','=',$id)->get();
+        $produksi = Produksi::find($id);
+        return view('home.produksi.detail',compact('detail','pilih_jenis','produksi'));
     }
 
     /**
@@ -64,7 +68,7 @@ class ProduksiController extends Controller
     public function edit($id)
     {
         $pilih_jenis = JenisBahan::all();
-        //
+
     }
 
     /**
@@ -76,7 +80,11 @@ class ProduksiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $produksi = Produksi::find($id);
+        $produksi->update([
+            'keterangan' => $request -> keterangan,
+        ]);
+        return redirect()->back();
     }
 
     /**

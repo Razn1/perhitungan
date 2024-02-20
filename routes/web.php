@@ -17,6 +17,7 @@ use App\Http\Controllers\ProduksiController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\JenisController;
 use App\Http\Controllers\MaterialController;
+use App\Http\Controllers\MachineController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\DetailController;
 /*
@@ -35,9 +36,9 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/PostLogin', [LoginController::class, 'login']);
 Route::get('/logout', [LoginController::class, 'logout']);
 
-
 Route::get('/register', [LoginController::class, 'register']);
 Route::post('/register/store', [LoginController::class, 'store']);
+
 
 
 Route::get('/',[DashboardController::class,'index']);
@@ -109,14 +110,18 @@ Route::get('/admin/dashboard',[DashboardController::class,'admin'])->middleware(
 
 //user page
 Route::get('/user/admin',[AdminUserController::class,'admin'])->middleware('admin');
+Route::get('/user/all',[AdminUserController::class,'index'])->middleware('admin');
 Route::get('/user/petugas',[AdminUserController::class,'petugas'])->middleware('admin');
 Route::get('/user/customer',[AdminUserController::class,'customer'])->middleware('admin');
 Route::get('/user/tambah',[AdminUserController::class,'create'])->middleware('admin');
+Route::get('/user/change-password/{id}',[AdminUserController::class,'password'])->middleware('admin');
+Route::post('/user/change/{id}',[AdminUserController::class,'changePassword'])->name('user.change.password');
 Route::post('/user/tambah',[AdminUserController::class,'store'])->middleware('admin');
 Route::get('/user/{id}/ubah',[AdminUserController::class,'edit'])->middleware('admin');
+Route::get('/user/{id}/setting',[AdminUserController::class,'edit'])->middleware('admin');
 Route::post('/user/{id}/edit',[AdminUserController::class,'update'])->middleware('admin');
 Route::get('/user/{id}/delete',[AdminUserController::class,'destroy'])->middleware('admin');
-
+Route::get('/user/{id}/profile',[AdminUserController::class,'profile'])->middleware('admin');
 
 //detail produksi
 Route::get('/detail_produksi',[DetailController::class,'index'])->middleware('admin');
@@ -131,7 +136,6 @@ Route::get('/detail_produksi/pilih_model',[DetailController::class,'pilih'])->mi
 Route::get('/pemesanan/{id}/execute',[DetailController::class,'create'])->middleware('petugas');
 Route::post('/detail_produksi/store',[DetailController::class,'store'])->middleware('petugas');
 Route::post('/detail_produksi/{id}/store',[DetailController::class,'update'])->middleware('petugas');
-
 
 //Jenis Bahan
 Route::get('/jenis_bahan',[JenisController::class,'index'])->middleware('admin');
@@ -148,7 +152,6 @@ Route::get('/bahan/{id}/edit',[MaterialController::class,'edit'])->middleware('a
 Route::post('/bahan/{id}/update',[MaterialController::class,'update'])->middleware('admin');
 Route::get('/bahan/jenis/{id}',[MaterialController::class,'show'])->middleware('admin');
 
-
 //Pemesanan
 Route::get('/pemesanan',[OrderController::class,'index'])->middleware('admin');
 Route::get('/pemesanan/request',[OrderController::class,'create'])->middleware('admin');
@@ -164,5 +167,15 @@ Route::get('/order/{id}/view-document', [OrderController::class, 'viewDocument']
 //produksi
 Route::get('/produksi',[ProduksiController::class,'utama'])->middleware('admin');
 Route::get('/produksi/{id}/hapus',[ProduksiController::class,'hapus'])->middleware('admin');
+Route::post('/produksi/{id}/update',[ProduksiController::class,'update'])->middleware('admin');
+Route::get('/produksi/{id}/detail',[ProduksiController::class,'show'])->middleware('admin');
 
 
+//Mesin
+Route::get('/mesin',[MachineController::class,'index'])->middleware('admin');
+Route::get('/mesin/create',[MachineController::class,'create'])->middleware('admin');
+Route::POST('/mesin/store',[MachineController::class,'store'])->middleware('admin');
+Route::get('/mesin/{id}/edit',[MachineController::class,'edit'])->middleware('admin');
+Route::post('/mesin/{id}/update',[MachineController::class,'update'])->middleware('admin');
+Route::get('/mesin/{id}/hapus',[MachineController::class,'destroy'])->middleware('admin');
+Route::get('/mesin/{id}/detail',[MachineController::class,'detail'])->middleware('admin');

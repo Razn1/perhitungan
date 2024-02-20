@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title','user')
+@section('tittle','user')
 @section('content')
 <div class="content-wrapper">
     <div class="row">
@@ -11,7 +11,7 @@
                     @enderror
                     <div class="card-tittle">
                         <h4>
-                            Type Of The Material
+                            Material Type Table
                         </h4>
                         @can('admin')
                         <!-- Button trigger modal -->

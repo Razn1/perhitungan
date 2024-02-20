@@ -1,5 +1,5 @@
 @extends('layout.master')
-@section('title','user')
+@section('tittle','user')
 @section('konten')
 <div class="content-wrapper">
     <div class="row">
@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">
-                        Type Of The Material
+                        User Table
                     </h4>
                     @can('admin')
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">

@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="{{ asset('assets/img/i.png') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="{{asset('template/css/style1.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/vendors/sweetalert2/sweetalert2.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/vendors/sweetalert2/sweetalert2.min.css')}}">=
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
         integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -27,8 +27,8 @@
         <div class="form-container sign-in">
             <form action="/PostLogin" method="post" role="form">
                 {{ csrf_field() }}
-                {{-- <img src="{{ asset('/assets/img/') }}" alt="main_logo"> --}}
-                <h1>Login</h1><br>
+                <img src="{{ asset('/assets/img/') }}" alt="main_logo">
+                <h1>Login</h1>
                 <span>Use your username password</span>
                 <input type="username" name="username" placeholder="Username">
                 <input type="password" name="password" placeholder="Password">

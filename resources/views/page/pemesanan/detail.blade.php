@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title','judul')
+@section('tittle','judul')
 @section('content')
 <div class="content-wrapper">
     <div class="row">
@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-body">
                  <h4 class="card-tittle">
-                   <a href="/order" class="btn btn-primary">back</a>
+                    <a href="/order" class="btn btn-primary">back</a>
                  </h4>
                     <div class="table-responsive">
                         <table class="table table-hover">

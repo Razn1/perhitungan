@@ -1,5 +1,5 @@
 @extends('layout.master')
-@section('title','material')
+@section('tittle','material')
 @section('konten')
 <div class="content-wrapper">
     <div class="row">
@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-body">
                  <h4 class="card-tittle">
-                    Material Page
+                    Material Table
                  </h4>
                  @can('admin')
                  <a class="btn btn-primary" href="/bahan/create">tambah data +</a>

@@ -1,5 +1,5 @@
 @extends('layout.master')
-@section('title','judul')
+@section('tittle','judul')
 @section('konten')
 <div class="content-wrapper">
     <div class="row">
@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-body">
                  <h4 class="card-tittle">
-                    Order Product Page <a href="/pemesanan/request" class="btn btn-primary">Add New Data <i class="mdi mdi-plus"></i></a>
+                    Judul Halaman <a href="/pemesanan/request" class="btn btn-primary">Add New Data <i class="mdi mdi-plus"></i></a>
                  </h4>
                  <div class="table-responsive">
                     <table id="example" class="table table-hover">
@@ -17,6 +17,7 @@
                                 <th scope="col">Id</th>
                                 <th scope="col">Model Name</th>
                                 <th scope="col">Berat Produk</th>
+                                <th scope="col">Status</th>
                                 <th scope="col">Material</th>
                                 <th>Aksi</th>
                             </tr>
@@ -31,6 +32,7 @@
                                 <td>{{$u->id}}</td>
                                 <td>{{$u->nama_model}}</td>
                                 <td>{{$u->berat}}</td>
+                                <td>{{$u->status}}</td>
                                 <td>{{$u->Bahan->nama}}</td>
                                 <td>
                                     <a href="/pemesanan/{{$u->id}}/edit" class="btn btn-warning">Edit</a>
